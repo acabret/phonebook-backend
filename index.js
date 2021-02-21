@@ -78,7 +78,7 @@ app.post("/api/persons", (request, response) => {
   // console.log("entrando post api/persons");
   const { name, number } = request.body;
   console.log("testing UI number =", typeof number);
-  
+
   // console.log(request.body);
   if (!name || !number) {
     response
@@ -168,7 +168,9 @@ app.get("/api/persons/:id", (request, response) => {
 });
 
 app.delete("/api/persons/:id", (request, response) => {
+  // console.log();
   const personId = parseInt(request.params.id);
+  console.log("personId: ",personId, " es de tipo:", typeof personId)
 
   if (!isValidNumber(personId)) {
     response
