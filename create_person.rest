@@ -1,0 +1,7 @@
+POST http://localhost:4000/api/persons
+Content-Type: application/json
+
+{
+    "name" : "newgs",
+    "number" : 45345345
+}
