@@ -14,6 +14,7 @@ const {
   deletePerson,
 } = require("./Phonebook.js");
 
+app.use(express.static("build"));
 app.use(express.json());
 app.use(cors());
 
@@ -76,7 +77,8 @@ app.get("/info", (request, response) => {
 app.post("/api/persons", (request, response) => {
   // console.log("entrando post api/persons");
   const { name, number } = request.body;
-
+  console.log("testing UI number =", typeof number);
+  
   // console.log(request.body);
   if (!name || !number) {
     response
